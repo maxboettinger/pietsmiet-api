@@ -1,6 +1,6 @@
 {
   "name": "pietsmiet-api",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A wrapper around the (unofficial) PietSmiet.de API. pls dont sue!",
   "author": "Max @maxboettinger",
   "homepage": "https://github.com/maxboettinger/pietsmiet-api",
