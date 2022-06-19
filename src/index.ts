@@ -6,17 +6,21 @@ export default class PietSmietApi {
   integrity: string;
   headers: any;
 
-  constructor(userAgent: string, integrity: string) {
+  constructor(initConfig: initConfig) {
     this.baseUrl = "https://www.pietsmiet.de/api/v1/";
-    this.userAgent = userAgent;
+    this.userAgent = initConfig.userAgent;
     //"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36";
-    this.integrity = integrity; //"3f3749c0";
+    this.integrity = initConfig.integrity; //"3f3749c0";
 
     this.headers = {
       Accept: "application/json",
       "User-Agent": this.userAgent,
       "X-Origin-Integrity": this.integrity,
     };
+
+    if (this.integrity == undefined || this.userAgent == undefined) {
+      throw "No input for integrity or userAgent!";
+    }
   }
 
   getVideos = async (requestConfig: contentRequest) => {
