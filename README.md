@@ -4,7 +4,7 @@
 [![Downloads/week](https://img.shields.io/npm/dw/pietsmiet-api.svg)](https://www.npmjs.com/package/pietsmiet-api)
 [![License](https://img.shields.io/npm/l/pietsmiet-api.svg)](https://github.com/maxboettinger/pietsmiet-api/blob/master/package.json)
 
-An (unofficial) wrapper around the pietsmiet.de API.
+An (unofficial!) wrapper around the pietsmiet.de API. Pls don't sue!
 
 ## Installation
 
