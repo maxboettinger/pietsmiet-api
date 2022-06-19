@@ -174,3 +174,11 @@ type contentRequest = {
   order: string; // choose what to sort the results by. Supported options: <latest/oldest/popular/trending>
 };
 ```
+
+## Build
+```sh
+git clone https://github.com/maxboettinger/pietsmiet-api.git
+cd pietsmiet-api
+npm i
+npm run local
+```
