@@ -9,8 +9,7 @@ export default class PietSmietApi {
   constructor(initConfig: initConfig) {
     this.baseUrl = "https://www.pietsmiet.de/api/v1/";
     this.userAgent = initConfig.userAgent;
-    //"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36";
-    this.integrity = initConfig.integrity; //"3f3749c0";
+    this.integrity = initConfig.integrity;
 
     this.headers = {
       Accept: "application/json",
