@@ -38,9 +38,13 @@ API.getVideos({
   page: "1",
   limit: "10",
   order: "latest",
-}).then((response) => {
-  console.log(response);
-});
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
 
 ### .getPlaylists()
@@ -52,9 +56,13 @@ API.getPlaylists({
   page: "1",
   limit: "10",
   order: "latest",
-}).then((response) => {
-  console.log(response);
-});
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
 
 ### .getClips()
@@ -66,9 +74,13 @@ API.getClips({
   page: "1",
   limit: "10",
   order: "latest",
-}).then((response) => {
-  console.log(response);
-});
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
 
 ### .getPodcasts()
@@ -80,9 +92,13 @@ API.getPodcasts({
   page: "1",
   limit: "10",
   order: "latest",
-}).then((response) => {
-  console.log(response);
-});
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
 
 ### .getChannels()
@@ -94,9 +110,13 @@ API.getChannels({
   page: "1",
   limit: "10",
   order: "latest",
-}).then((response) => {
-  console.log(response);
-});
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
 
 ### .getAuthors()
@@ -104,9 +124,13 @@ API.getChannels({
 Used to access authors.
 
 ```js
-API.getAuthors().then((response) => {
-  console.log(response);
-});
+API.getAuthors()
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
 
 ### .getNews()
@@ -118,7 +142,11 @@ API.getNews({
   page: "1",
   limit: "10",
   order: "latest",
-}).then((response) => {
-  console.log(response);
-});
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
