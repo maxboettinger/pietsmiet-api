@@ -24,158 +24,165 @@ export default class PietSmietApi {
   }
 
   getVideos = async (requestConfig: contentRequest) => {
-    await axios
-      .get<any>(
-        this.baseUrl +
-          "videos?limit=" +
-          requestConfig.limit +
-          "&page=" +
-          requestConfig.page +
-          "&order=" +
-          requestConfig.order,
-        {
-          headers: this.headers,
-        }
-      )
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.log("error during request!");
-        console.log(error.response.data);
-      });
+    return new Promise((resolve, reject) => {
+      axios
+        .get<any>(
+          this.baseUrl +
+            "videos?limit=" +
+            requestConfig.limit +
+            "&page=" +
+            requestConfig.page +
+            "&order=" +
+            requestConfig.order,
+          {
+            headers: this.headers,
+          }
+        )
+        .then((response) => {
+          resolve(response.data);
+        })
+        .catch((error) => {
+          reject(error.response.data);
+        });
+    });
   };
 
   getPlaylists = async (requestConfig: contentRequest) => {
-    await axios
-      .get<any>(
-        this.baseUrl +
-          "videos/playlists?limit=" +
-          requestConfig.limit +
-          "&page=" +
-          requestConfig.page +
-          "&order=" +
-          requestConfig.order,
-        {
-          headers: this.headers,
-        }
-      )
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.log("error during request!");
-        console.log(error.response.data);
-      });
+    return new Promise((resolve, reject) => {
+      axios
+        .get<any>(
+          this.baseUrl +
+            "videos/playlists?limit=" +
+            requestConfig.limit +
+            "&page=" +
+            requestConfig.page +
+            "&order=" +
+            requestConfig.order,
+          {
+            headers: this.headers,
+          }
+        )
+        .then((response) => {
+          resolve(response.data);
+        })
+        .catch((error) => {
+          reject(error.response.data);
+        });
+    });
   };
 
   getClips = async (requestConfig: contentRequest) => {
-    await axios
-      .get<any>(
-        this.baseUrl +
-          "videos/clips?limit=" +
-          requestConfig.limit +
-          "&page=" +
-          requestConfig.page +
-          "&order=" +
-          requestConfig.order,
-        {
-          headers: this.headers,
-        }
-      )
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.log("error during request!");
-        console.log(error.response.data);
-      });
+    return new Promise((resolve, reject) => {
+      axios
+        .get<any>(
+          this.baseUrl +
+            "videos/clips?limit=" +
+            requestConfig.limit +
+            "&page=" +
+            requestConfig.page +
+            "&order=" +
+            requestConfig.order,
+          {
+            headers: this.headers,
+          }
+        )
+        .then((response) => {
+          resolve(response.data);
+        })
+        .catch((error) => {
+          reject(error.response.data);
+        });
+    });
   };
 
   getPodcasts = async (requestConfig: contentRequest) => {
-    await axios
-      .get<any>(
-        this.baseUrl +
-          "podcast/episodes?limit=" +
-          requestConfig.limit +
-          "&page=" +
-          requestConfig.page +
-          "&order=" +
-          requestConfig.order,
-        {
-          headers: this.headers,
-        }
-      )
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.log("error during request!");
-        console.log(error.response.data);
-      });
+    return new Promise((resolve, reject) => {
+      axios
+        .get<any>(
+          this.baseUrl +
+            "podcast/episodes?limit=" +
+            requestConfig.limit +
+            "&page=" +
+            requestConfig.page +
+            "&order=" +
+            requestConfig.order,
+          {
+            headers: this.headers,
+          }
+        )
+        .then((response) => {
+          resolve(response.data);
+        })
+        .catch((error) => {
+          reject(error.response.data);
+        });
+    });
   };
 
   getChannels = async (requestConfig: contentRequest) => {
-    await axios
-      .get<any>(
-        this.baseUrl +
-          "videos/channels?limit=" +
-          requestConfig.limit +
-          "&page=" +
-          requestConfig.page +
-          "&order=" +
-          requestConfig.order,
-        {
-          headers: this.headers,
-        }
-      )
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.log("error during request!");
-        console.log(error.response.data);
-      });
+    return new Promise((resolve, reject) => {
+      axios
+        .get<any>(
+          this.baseUrl +
+            "videos/channels?limit=" +
+            requestConfig.limit +
+            "&page=" +
+            requestConfig.page +
+            "&order=" +
+            requestConfig.order,
+          {
+            headers: this.headers,
+          }
+        )
+        .then((response) => {
+          resolve(response.data);
+        })
+        .catch((error) => {
+          reject(error.response.data);
+        });
+    });
   };
 
   getAuthors = async () => {
-    await axios
-      .get<any>(this.baseUrl + "videos/authors", {
-        headers: {
-          Accept: "application/json",
-          "User-Agent": this.userAgent,
-          "X-Origin-Integrity": this.integrity,
-        },
-      })
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.log("error during request!");
-        console.log(error.response.data);
-      });
+    return new Promise((resolve, reject) => {
+      axios
+        .get<any>(this.baseUrl + "videos/authors", {
+          headers: {
+            Accept: "application/json",
+            "User-Agent": this.userAgent,
+            "X-Origin-Integrity": this.integrity,
+          },
+        })
+        .then((response) => {
+          resolve(response.data);
+        })
+        .catch((error) => {
+          reject(error.response.data);
+        });
+    });
   };
 
   getNews = async (requestConfig: contentRequest) => {
-    await axios
-      .get<any>(
-        this.baseUrl +
-          "news/articles?limit=" +
-          requestConfig.limit +
-          "&page=" +
-          requestConfig.page +
-          "&order=" +
-          requestConfig.order,
-        {
-          headers: this.headers,
-        }
-      )
-      .then((response) => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.log("error during request!");
-        console.log(error.response.data);
-      });
+    return new Promise((resolve, reject) => {
+      axios
+        .get<any>(
+          this.baseUrl +
+            "news/articles?limit=" +
+            requestConfig.limit +
+            "&page=" +
+            requestConfig.page +
+            "&order=" +
+            requestConfig.order,
+          {
+            headers: this.headers,
+          }
+        )
+        .then((response) => {
+          resolve(response.data);
+        })
+        .catch((error) => {
+          reject(error.response.data);
+        });
+    });
   };
 }
