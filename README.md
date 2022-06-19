@@ -22,7 +22,7 @@ Constructor expects argument of type [initConfig](#initconfig).
 import PietSmietApi from "pietsmiet-api";
 
 const API = new PietSmietApi({
-  userAgent: "", // insert your User-Agent
+  userAgent: "", // insert your User-Agent (might be optional)
   integrity: "", // insert (your) current x-origin-integrity
 });
 ```
@@ -159,7 +159,7 @@ API.getNews({
 
 ```ts
 type initConfig = {
-  userAgent: string; // e.g. "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36";
+  userAgent: string; // e.g. "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"; (might be optional)
   integrity: string; // e.g. "3f3749c0";
 };
 
