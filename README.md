@@ -14,7 +14,9 @@ npm install pietsmiet-api
 
 ## Usage
 
-**Note:** API requests are signed by a specific request header called _x-origin-integrity_. I have not yet found a way to reverse-engineer the generation, so you'll have to grab the current one by visiting pietsmiet.de and inspecting any request with the browser dev-tools. It changes once(?) a day.
+**Note:** API requests are signed by a custom request header called _x-origin-integrity_. I have reverse-engineered the generation, but as this is meant to prevent abuse, its not implemented directly in this module.  
+
+**Setup:** Visit [pietsmiet.de](https://www.pietsmiet.de/) and inspect any (api-)request with the browser dev-tools. Copy the value for _x-origin-integrity_ and use to initialize your PietSmietApi instance.
 
 Constructor expects argument of type [initConfig](#initconfig).
 
