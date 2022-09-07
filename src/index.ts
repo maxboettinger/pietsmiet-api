@@ -191,4 +191,19 @@ export default class PietSmietApi {
         });
     });
   };
+
+  getUploadplan = async () => {
+    return new Promise((resolve, reject) => {
+      axios
+        .get<any>(this.baseUrl + "schedules", {
+          headers: this.headers,
+        })
+        .then((response) => {
+          resolve(response.data.data[0]);
+        })
+        .catch((error) => {
+          reject(error.response.data);
+        });
+    });
+  };
 }
