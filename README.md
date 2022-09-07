@@ -14,7 +14,7 @@ npm install pietsmiet-api
 
 ## Usage
 
-**Note:** API requests are signed by a custom request header called _x-origin-integrity_. I have reverse-engineered the generation, but as this is meant to prevent abuse, its not implemented directly in this module.  
+**Note:** API requests are signed by a custom request header called _x-origin-integrity_. I have reverse-engineered the generation, but as this is meant to prevent abuse, its not implemented directly in this module.
 
 **Setup:** Visit [pietsmiet.de](https://www.pietsmiet.de/) and inspect any (api-)request with the browser dev-tools. Copy the value for _x-origin-integrity_ and use to initialize your PietSmietApi instance.
 
@@ -164,7 +164,6 @@ type initConfig = {
   userAgent: string; // e.g. "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"; (might be optional)
   integrity: string; // e.g. "3f3749c0";
 };
-
 ```
 
 ### contentRequest
@@ -174,10 +173,12 @@ type contentRequest = {
   page: string; // pagination offset. Can be derived from last response.
   limit: string; // limit results. Maximum is 500.
   order: string; // choose what to sort the results by. Supported options: <latest/oldest/popular/trending>
+  channels?: string; // optional argument for getVideos() method. Limit search to specific channel. <8(Frag Pietsmiet)/9(pietmiet)/10(Pietsmiet TV)/12(Best of Pietsmiet)/37(PietsmietDE)/44(Streams)>
 };
 ```
 
 ## Build
+
 ```sh
 git clone https://github.com/maxboettinger/pietsmiet-api.git
 cd pietsmiet-api

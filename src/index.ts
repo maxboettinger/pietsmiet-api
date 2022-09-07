@@ -24,6 +24,12 @@ export default class PietSmietApi {
 
   getVideos = async (requestConfig: contentRequest) => {
     return new Promise((resolve, reject) => {
+      // handle optional argument channels
+      let channels_query = "";
+      if (requestConfig.channels != undefined) {
+        channels_query = encodeURI("&channels[]=") + requestConfig.channels;
+      }
+
       axios
         .get<any>(
           this.baseUrl +
@@ -32,7 +38,8 @@ export default class PietSmietApi {
             "&page=" +
             requestConfig.page +
             "&order=" +
-            requestConfig.order,
+            requestConfig.order +
+            channels_query,
           {
             headers: this.headers,
           }
